@@ -41,7 +41,7 @@ namespace PlaywrightDemo1.TestClasses
             }
             else
             {
-                TestLogger.Fail($"Login error verification failed... Actual: {loginError}. Expected: {loginUser.LoginError}");
+                TestLogger.Fail($"Login error verification failed... Actual: '{loginError}'. Expected: '{loginUser.LoginError}'");
             }
         }
     }
