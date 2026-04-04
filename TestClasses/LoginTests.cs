@@ -1,4 +1,6 @@
 ﻿using Microsoft.Playwright;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using PlaywrightDemo1.CustomAttributes;
 using PlaywrightDemo1.DataModels;
 using PlaywrightDemo1.DataProvider;
@@ -13,11 +15,14 @@ using System.Text;
 namespace PlaywrightDemo1.TestClasses
 {
     [Parallelizable(ParallelScope.All)]
+    [AllureNUnit]
+    [AllureSuite("LoginFeature")]
     public class LoginTests : TestBase
     {
-        [Test]
+        [Test(Description = "Login with a valid Standard User")]
         [JIRAKey("TC001")]
         [Category("Smoke")]
+        
         public async Task TC001_LoginWithStandardUser()
         {
             LoginPage loginPage = new LoginPage(page);
@@ -27,7 +32,7 @@ namespace PlaywrightDemo1.TestClasses
             TestLogger.Pass("Test Pass");
         }
 
-        [Test]
+        [Test(Description = "Login with invalid users")]
         [TestCaseSource(typeof(TestDataProvider), nameof(TestDataProvider.LoginDataProvider))]
         [JIRAKey("TC002")]
         public async Task TC002_InvalidLogin(LoginUser loginUser)
