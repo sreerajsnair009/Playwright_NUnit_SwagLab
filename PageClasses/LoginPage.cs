@@ -9,11 +9,8 @@ namespace PlaywrightDemo1.PageClasses
 {
     public class LoginPage : BasePage
     {
-        //private readonly IPage page;
         public LoginPage(IPage page) : base(page) { }
-        //{
-        //    this.page = page;
-        //}
+       
         private ILocator Username => page.Locator("#user-name");
         private ILocator Password => page.Locator("#password");
         private ILocator LoginButton => page.Locator("#login-button");

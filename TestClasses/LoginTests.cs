@@ -17,6 +17,7 @@ namespace PlaywrightDemo1.TestClasses
     {
         [Test]
         [JIRAKey("TC001")]
+        [Category("Smoke")]
         public async Task TC001_LoginWithStandardUser()
         {
             LoginPage loginPage = new LoginPage(page);
